@@ -1,1 +1,3 @@
-# Begin-learning-JavaScript
+# JavaScript
+
+## Context (.this)
