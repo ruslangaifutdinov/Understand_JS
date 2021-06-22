@@ -1,23 +1,33 @@
-function hello () {
-    console.log(`Hello ${this}`)
+function sayHello() {
+    console.log(`say hello ${this}`)
 }
 
-hello()
+//sayHello()
 
 const person = {
-    name: `Ruslan`,
-    age: 33,
-    sayHello: hello,
-    infoLog: function(){
-        console.log(`Name person: ${this.name}, age = ${this.age}`)
+    name: "Ruslan",
+    age: 25,
+    helloFromPerson: sayHello,
+    helloAgain: function(){
+        console.log(`This person name: ${this.name}`)
+        console.log(`This person age: ${this.age}`)
     }
 }
 
-person.infoLog() // Show name and age person
+person.helloAgain()
 
-const person2 = {
-    name: "Kristina",
-    age: 31
+const gamer = {
+    name: "Ruslan",
+    age: 33
 }
 
-person.infoLog.bind(person2)()
+person.helloAgain.bind(gamer)()
+
+let array = [1,2,3,4,5]
+
+Array.prototype.multBy = function(n) {
+    return this.map(function(i){
+        return i * n
+    })
+}
+console.log(array.multBy(2))
